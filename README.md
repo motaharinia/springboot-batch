@@ -1,39 +1,30 @@
-## Spring Boot Profile Properties
+## Spring Boot Batch
 
-### Profiles:
-Spring Profiles provide a way to segregate parts of your application configuration and make it only available in certain environments
-Spring boot allows to add profile-specific properties files by using application-{myProfileName}.properties pattern.
+### Spring Batch:
+A lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise systems.
+Spring Batch provides reusable functions that are essential in processing large volumes of records, including logging/tracing, transaction management, job processing statistics, job restart, skip, and resource management. It also provides more advanced technical services and features that will enable extremely high-volume and high performance batch jobs through optimization and partitioning techniques. Simple as well as complex, high-volume batch jobs can leverage the framework in a highly scalable manner to process significant volumes of information.
 
-### Active Profile:
-To load a specific profile property file we can use command line option -Dspring.profiles.active=myProfileName.
-The default file application.properties can still be used by not using any -Dspring.profile.active option or by using -Dspring.profiles.active=default. The default properties file can be named as application-default.properties as well.
-The properties specified in default application.properties are overridden by the profile-specific file properties.
 
-### reading properties by @Value:
-add resource tag to pom.xml inside <build> tag for reading properties by @Value
-```
-       <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>**/*.properties</include>
-                </includes>
-            </resource>
-        </resources>
-```
+### Features
+- Transaction management
+- Chunk based processing
+- Declarative I/O
+- Start/Stop/Restart
+- Retry/Skip
+- Web based administration interface (Spring Cloud Data Flow)
+
 
 further references:     
-- https://docs.spring.io/spring-boot/docs/1.1.x/reference/html/boot-features-profiles.html
-- https://www.logicbig.com/tutorials/spring-framework/spring-boot/profile-specific-properties.html
-- https://stackoverflow.com/questions/41244585/how-to-set-spring-active-profile-environment-variable-in-intellij/46345476
-- https://stackoverflow.com/questions/39738901/how-do-i-activate-a-spring-boot-profile-when-running-from-intellij
+- https://spring.io/projects/spring-batch
+- https://spring.io/guides/gs/batch-processing/
+- https://www.baeldung.com/spring-boot-spring-batch
+- https://www.javainuse.com/spring/bootbatch
+- https://www.petrikainulainen.net/programming/spring-framework/spring-batch-tutorial-reading-information-from-an-excel-file/
+- https://github.com/kumarpankaj18/spring-batch-excel
 
 
 ### Project Descriptions:
-run project and view 
-- url in "http://localhost:8085/" 
-- random integer in "http://localhost:8085/randomInt" 
+please see application.properties files in resources folder and select a active profile "dev" or "com" to run project. you can check test methods too.
 
 ### IntellliJ IDEA Configurations:
 - IntelijIDEA: Help -> Edit Custom Vm Options -> add these two line:
